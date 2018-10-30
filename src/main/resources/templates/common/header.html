@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>页头</title>
+</head>
+<body>
+<div th:fragment="header">
+    <h1>demothymeleaf</h1>
+    <!--以下两种方案都可以-->
+    <!--<a href="/user" th:href="@{~/user/userlist}">首页</a>-->
+    <a href="/user" th:href="@{/user/userlist}">首页</a>
+</div>
+</body>
+</html>

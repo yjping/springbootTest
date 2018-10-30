@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户详情</title>
+</head>
+<body>
+<div th:replace="~{common/header::header}"></div>
+<h4 th:text="${userModel.title}"></h4>
+<!--第一种方式-->
+<!--<div th:object="${userModel.user}">-->
+    <!--<p><strong>ID:<span th:text="*{id}"></span></strong></p>-->
+    <!--<p><strong>名字:<span th:text="*{name}"></span></strong></p>-->
+    <!--<p><strong>年龄:<span th:text="*{age}"></span></strong></p>-->
+<!--</div>-->
+
+<!--第二种方式-->
+<div>
+    <p><strong>ID:<span th:text="${userModel.user.id}"></span></strong></p>
+    <p><strong>名字:<span th:text="${userModel.user.name}"></span></strong></p>
+    <p><strong>年龄:<span th:text="${userModel.user.age}"></span></strong></p>
+</div>
+<div>
+    <a th:href="@{'/user/delete/'+${userModel.user.id}}">删除</a>
+    <a th:href="@{'/user/edit/'+${userModel.user.id}}">修改</a>
+</div>
+<div th:replace="~{common/footer::footer}"></div>
+</body>
+</html>
